@@ -1,5 +1,12 @@
 function minDate(dates) {
   //write you code here
+	const dateObjects = dates.map(dateStr => new Date(dateStr));
+  
+  // find the minimum date from the array of Date objects
+  const minDate = new Date(Math.min.apply(null, dateObjects));
+  
+  // return the minimum date in the format "YYYY/MM/DD"
+  return minDate.toISOString().slice(0, 10).replace(/-/g, '/');
 }
 
 // Do not change the code
